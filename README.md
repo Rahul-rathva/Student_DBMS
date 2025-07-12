@@ -35,24 +35,13 @@ student_db/
 5. Copy all project files into `C:\xampp\htdocs\student_db\`
 6. Visit: `http://localhost/student_db/index.php`
 
-## 📸 Screenshots (Optional)
-Add screenshots like:
-- Student list page
-- Add new student form
-- Enrollment page
-
 ## 🌐 Live Version
 This app is meant to run locally using XAMPP.  
 GitHub Pages does not support PHP, so it can't be hosted directly here.
 
-To deploy online, use services like:
-- [000Webhost](https://www.000webhost.com/)
-- [InfinityFree](https://infinityfree.net/)
-
 ## 📦 Project Status
 ✅ Basic features complete  
-🚧 Optional enhancements like search and pagination can be added
 
 ## ✨ Author
-Project by [Your Name]  
+Project by Rahul  
 GitHub: [YourGitHubUsername](https://github.com/YourGitHubUsername)
