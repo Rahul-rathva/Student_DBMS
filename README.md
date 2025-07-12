@@ -44,4 +44,4 @@ GitHub Pages does not support PHP, so it can't be hosted directly here.
 
 ## ✨ Author
 Project by Rahul  
-GitHub: [YourGitHubUsername](https://github.com/YourGitHubUsername)
+
