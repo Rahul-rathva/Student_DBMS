@@ -1,15 +1,14 @@
 <?php 
 session_start();
-if(!asset($_SESSION['user'])){
+if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit();
 }
-?> 
+?>
 
 <?php
 require 'config.php';
 $action = isset($_GET['action']) ? $_GET['action'] : 'view';
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($action === 'add') {
@@ -43,7 +42,6 @@ if ($action === 'delete' && isset($_GET['id'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +51,11 @@ if ($action === 'delete' && isset($_GET['id'])) {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 p-6">
-    <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow">
-        <h1 class="text-2xl font-bold mb-4">Student Database Management</h1>
+    <div class="max-w-5xl mx-auto bg-white p-6 rounded shadow">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold">Student Database Management</h1>
+            <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Logout</a>
+        </div>
 
         <?php if ($action === 'add' || $action === 'edit'): ?>
             <?php
@@ -86,11 +87,11 @@ if ($action === 'delete' && isset($_GET['id'])) {
                     <label class="block text-sm font-medium">Date of Birth</label>
                     <input type="date" name="dob" value="<?php echo $student ? $student['dob'] : ''; ?>" class="w-full p-2 border rounded">
                 </div>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
-                <a href="index.php?action=view" class="bg-gray-500 text-white px-4 py-2 rounded">Cancel</a>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Save</button>
+                <a href="index.php?action=view" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">Cancel</a>
             </form>
         <?php else: ?>
-            <a href="index.php?action=add" class="bg-green-500 text-white px-4 py-2 rounded mb-4 inline-block">Add New Student</a>
+            <a href="index.php?action=add" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded mb-4 inline-block">Add New Student</a>
             <table class="w-full border-collapse">
                 <thead>
                     <tr class="bg-gray-200">
