@@ -34,6 +34,14 @@ if ($action === 'delete' && isset($_GET['id'])) {
 }
 ?>
 
+<?php 
+session_start();
+if(!asset($_SESSION['user'])){
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
