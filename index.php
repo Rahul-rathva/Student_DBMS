@@ -1,6 +1,15 @@
+<?php 
+session_start();
+if(!asset($_SESSION['user'])){
+    header("Location: login.php");
+    exit();
+}
+?> 
+
 <?php
 require 'config.php';
 $action = isset($_GET['action']) ? $_GET['action'] : 'view';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($action === 'add') {
@@ -34,13 +43,6 @@ if ($action === 'delete' && isset($_GET['id'])) {
 }
 ?>
 
-<?php 
-session_start();
-if(!asset($_SESSION['user'])){
-    header("Location: login.php");
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
